@@ -22,6 +22,5 @@ get '/' do
 end
 
 get '/staff' do
-  "<link href='style.css' rel='stylesheet' type='text/css'>" +
   staff
 end

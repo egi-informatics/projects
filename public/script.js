@@ -5,5 +5,5 @@ function loadStaff() {
 }
 
 $(function() {
-    $('#view-staff').click(loadStaff);
+    $('#load-staff').click(loadStaff);
 });
