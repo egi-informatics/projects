@@ -53,6 +53,9 @@ nav .button{
 nav .button:hover{
   background-color: #E2E2E2;
 }
+nav li:first-child .button{
+  margin-top: 0;
+}
 
 .loading{
   background: url('spinning.gif');
