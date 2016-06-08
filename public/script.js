@@ -4,7 +4,8 @@ function loadStaff() {
     beforeSend: showSpinner,
     complete: hideSpinner,
     success: function(data){
-      $('.staff').html(data)
+      $('.staff').val(data.trim());
+      auto_grow($('.staff').get(0));
     }
   });
 }
@@ -15,6 +16,10 @@ function showSpinner(){
 
 function hideSpinner(){
   $('.loading').addClass('hidden');
+}
+
+function auto_grow(element) {
+  element.style.height = (element.scrollHeight)+"px";
 }
 
 $(function() {

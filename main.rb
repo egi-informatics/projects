@@ -12,7 +12,7 @@ def staff
     if line.include? "class=\"staff\">"
       cleaning = line.split("class=\"staff\"\>")[1]
       result = cleaning.split("<br/>")[0]
-      output += "<li>#{result}</li> "
+      output += "#{result}\n"
     end
   end
   return output

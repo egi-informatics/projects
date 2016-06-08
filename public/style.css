@@ -1,44 +1,60 @@
 *{margin: 0; padding: 0;}
 
 body {
-  font-family: sans-serif;
+  /*background-color: #525659;*/
+  font-family: 'Myriad Pro',sans-serif;
 }
+.menu {
 
+}
 .content {
-  width: 1140px;
-  margin: 15px auto;
+  width: calc(100% - 240px - 50px);
+  margin: 20px 20px 50px 240px;
+  padding: 15px;
+  background-color: whitesmoke;
+  border: 1px solid lightgray;
 }
 
-.staff {
-  min-height: 50px;
-  width: 300px;
-  background-color: whitesmoke;
-  padding: 15px;
-  float: left;
-  clear: both;
+.staff{
+  background-color: transparent;
+  border: none;
+  resize: none;
+  font-size: 1em;
+  width: 100%;
 }
 
 .staff li{
   list-style-type: none;
-  margin: 5px 0;
+  /*margin: 5px 0;*/
 }
 
-div.button {
-  float: left;
-  height: 40px;
-  padding: 0 10px;
-  background-color: deepskyblue;
+.staff:focus{
+  outline: none;
+}
+
+nav {
+  display: inline-block;
+  width: 200px;
+  margin: 20px;
+  top: 0px;
+  position: fixed;
+}
+
+nav li{list-style-type: none;}
+
+nav .button{
+  border: 1px solid lightgray;
+  padding: 12px 20px;
+  margin-top: -1px;
+  background-color: whitesmoke;
   cursor: pointer;
+  transition: all .1s;
 }
-
-div.button span{
-  display: table-cell;
-  vertical-align: middle;
-  height: 40px;
+nav .button:hover{
+  background-color: #E2E2E2;
 }
 
 .loading{
-  float: left;
   background: url('spinning.gif');
   background-size: contain;
   width: 40px;

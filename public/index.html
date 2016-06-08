@@ -4,15 +4,21 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" href="favicon.ico">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
     <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
     <script src="script.js" charset="utf-8"></script>
     <title></title>
   </head>
   <body>
-    <div class="content">
-      <div class="button" id="load-staff"><span>Load Staff</span></div>
+    <nav>
+      <ul>
+        <li><div class="button" id="load-staff">Staff</div></li>
+        <li><div class="button" id="load-staff">Projects</div></li>
+      </ul>
       <div class="loading hidden"></div>
-      <div class="staff"></div>
+    </nav>
+    <div class="content">
+      <textarea class="staff"></textarea>
     </div>
   </body>
 </html>
