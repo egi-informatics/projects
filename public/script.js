@@ -23,5 +23,6 @@ function auto_grow(element) {
 }
 
 $(function() {
-    $('#load-staff').click(loadStaff);
+  $('#load-staff').click(loadStaff);
+
 });
