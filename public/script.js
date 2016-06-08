@@ -10,6 +10,8 @@ function loadStaff() {
   });
 }
 
+var copyButton = "<button class='copy-button' type='button' data-clipboard-target='#staff'>Copy Text</button>";
+
 function showSpinner(){
   $('.loading').removeClass('hidden');
 }
@@ -19,10 +21,11 @@ function hideSpinner(){
 }
 
 function auto_grow(element) {
-  element.style.height = (element.scrollHeight)+"px";
+  element.style.height = "calc(" + (element.scrollHeight) + "px - 1em)";
 }
 
 $(function() {
   $('#load-staff').click(loadStaff);
 
+  new Clipboard('.copy-button');
 });
