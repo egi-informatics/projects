@@ -74,10 +74,21 @@ nav li:first-child .button{
   border: 1px solid lightgray;
   border-radius: 3px;
   transition: all .01s;
+  margin: 10px;
 }
 
 .copy-button:hover {
   background-color: lightgray;
+}
+
+.copy-message{
+  opacity: 0;
+  display: inline-block;
+  margin-top: -3px;
+  transition: all .1s;
+}
+.copy-button:hover + .copy-message{
+  opacity: .6;
 }
 
 .hidden {
