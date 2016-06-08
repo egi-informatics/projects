@@ -1,7 +1,20 @@
 function loadStaff() {
-  $.get("/staff", function(data){
-    $('.staff').html(data);
+  $.ajax({
+    url: "/staff",
+    beforeSend: showSpinner,
+    complete: hideSpinner,
+    success: function(data){
+      $('.staff').html(data)
+    }
   });
+}
+
+function showSpinner(){
+  $('.loading').removeClass('hidden');
+}
+
+function hideSpinner(){
+  $('.loading').addClass('hidden');
 }
 
 $(function() {

@@ -1,3 +1,5 @@
+*{margin: 0; padding: 0;}
+
 body {
   font-family: sans-serif;
 }
@@ -10,12 +12,38 @@ body {
 .staff {
   min-height: 50px;
   width: 300px;
-  margin: 15px 0;
   background-color: whitesmoke;
   padding: 15px;
+  float: left;
+  clear: both;
 }
 
 .staff li{
   list-style-type: none;
   margin: 5px 0;
+}
+
+div.button {
+  float: left;
+  height: 40px;
+  padding: 0 10px;
+  background-color: deepskyblue;
+  cursor: pointer;
+}
+
+div.button span{
+  display: table-cell;
+  vertical-align: middle;
+  height: 40px;
+}
+
+.loading{
+  float: left;
+  background: url('spinning.gif');
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+}
+.hidden {
+  opacity: 0;
 }
