@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'open-uri'
+require 'pdf-reader'
 
 require_relative 'staff'
 require_relative 'projects'
