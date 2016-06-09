@@ -5,15 +5,18 @@ def projects
   reader = PDF::Reader.new(io)
   output = ""
 
-  output +=
-      "<h3>Research Portfolio</h3>" +
-      "<textarea id='project-text'>"
+  output += "<h3>Research Portfolio</h3>"
+
   reader.pages.each do |page|
     text = page.text
+    new_line = ""
+
+    # Skipps pages without I numbers
     if !text.include? "I 0"
       next
     end
 
+    # Seaches page for I number
     text.each_line do |line|
       if line.include? "I 0"
 
@@ -28,7 +31,7 @@ def projects
               word += "  "
             end
 
-            output += word
+            new_line += "<div class='num'>#{word}</div>"
             break
           end
         end
@@ -36,27 +39,28 @@ def projects
       end
     end
 
+    # Searches page for project status
+    status = ""
     text.each_line do |line|
       if line.include? "In Development"
-        output += "  Development"
+        status += "Development"
         break
       end
       if line.include? "Completed"
-        output += "  Completed"
+        status += "Completed"
         break
       end
       if line.include? "In Progress"
-        output += "  Progress"
+        status += "Progress"
         break
       end
     end
+    new_line += "<div class='status'>#{status}</div>"
 
-    output += "\n"
+    output += "<li>#{new_line}</li>"
 
   end
   output.chomp!
-  output += "</textarea>" +
-  "<script>auto_grow($('#project-text').get(0));</script>"
 
   return output
 end

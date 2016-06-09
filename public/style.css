@@ -18,7 +18,6 @@ textarea{
   border: none;
   resize: none;
   font-size: 1em;
-  font-family: monospace;
   width: 100%;
   padding: 10px;
 }
@@ -30,6 +29,18 @@ textarea li{
 
 textarea:focus{
   outline: none;
+}
+
+.content li{
+  list-style-type: none;
+}
+
+.num, .status{
+  display: inline-block;
+}
+
+.num{
+  width: 85px;
 }
 
 nav {
@@ -58,8 +69,8 @@ nav li:first-child .button{
 }
 
 h3{
-  margin-left:10px;
   margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .loading{
