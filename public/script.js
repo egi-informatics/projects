@@ -1,23 +1,16 @@
-function loadStaff() {
+function loadInto(element, page){
   $.ajax({
-    url: "/staff",
-    beforeSend: showSpinner,
-    complete: hideSpinner,
+    url: page,
+    beforeSend: function(){
+      $('.loading').removeClass('hidden');
+    },
     success: function(data){
-      $('.staff').val(data.trim());
-      auto_grow($('.staff').get(0));
+      $(element).html(data);
+    },
+    complete: function(){
+      $('.loading').addClass('hidden');
     }
   });
-}
-
-var copyButton = "<button class='copy-button' type='button' data-clipboard-target='#staff'>Copy Text</button>";
-
-function showSpinner(){
-  $('.loading').removeClass('hidden');
-}
-
-function hideSpinner(){
-  $('.loading').addClass('hidden');
 }
 
 function auto_grow(element) {
@@ -25,7 +18,12 @@ function auto_grow(element) {
 }
 
 $(function() {
-  $('#load-staff').click(loadStaff);
+  $('#load-staff').click(function(){
+    loadInto('.content', '/staff');
+  });
+  $('#load-projects').click(function(){
+    loadInto('.content', '/projects');
+  });
 
   new Clipboard('.copy-button');
 });

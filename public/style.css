@@ -15,7 +15,7 @@ body {
   border: 1px solid lightgray;
 }
 
-.staff{
+#staff-text{
   background-color: transparent;
   border: none;
   resize: none;
@@ -24,12 +24,12 @@ body {
   padding: 10px;
 }
 
-.staff li{
+#staff-text li{
   list-style-type: none;
   /*margin: 5px 0;*/
 }
 
-.staff:focus{
+#staff-text:focus{
   outline: none;
 }
 
