@@ -23,15 +23,38 @@ def projects
         array.each do |word|
           if word.include? "I0"
             remove_letters(word)
-            output += word + "\n"
+
+            if word.length == 6
+              word += "  "
+            end
+
+            output += word
             break
           end
         end
-
         break
       end
     end
+
+    text.each_line do |line|
+      if line.include? "In Development"
+        output += "  Development"
+        break
+      end
+      if line.include? "Completed"
+        output += "  Completed"
+        break
+      end
+      if line.include? "In Progress"
+        output += "  Progress"
+        break
+      end
+    end
+
+    output += "\n"
+
   end
+  output.chomp!
   output += "</textarea>" +
   "<script>auto_grow($('#project-text').get(0));</script>"
 
