@@ -15,6 +15,9 @@ def json
       next
     end
     status = project["status"]
+    if status == "Complete"
+      status = "Completed"
+    end
     pre_sort += "<li><div class='num'>#{number}</div><div class='status'>#{status}</div>\n"
   end
 
