@@ -52,7 +52,12 @@ textarea:focus{
 
 .area{
   display: inline-block;
-  margin-right: 40px;
+  margin-right: 30px;
+}
+
+.area + .area {
+  border-left: 1px solid lightgray;
+  padding-left: 30px;
 }
 
 nav {

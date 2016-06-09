@@ -5,10 +5,10 @@ def projects
   page = load_rp
 
   page +=
-    "<div><h3>Map JSON Data</h3>" +
+    "<div class='json area'><h3>Map JSON Data</h3>" +
     "<button id='json-button'>Load Map JSON Data</button>" +
-    "<div class='json area'></div></div>" +
-    "<script>$('#json-button').click(function(){loadInto('.json', '/json');$('#json-button').hide()});</script>"
+    "<div id='json-text'></div></div>" +
+    "<script>$('#json-button').click(function(){loadInto('#json-text', '/json');$('#json-button').hide()});</script>"
 
   return page
 end
