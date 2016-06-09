@@ -28,18 +28,8 @@ def load_rp
     pre_sort += "<li>#{new_line}</li>\n"
   end
 
-  # Sorts projects by I number
-  list = []
-  pre_sort.each_line do |line|
-    list.push line
-  end
-  list.sort!
 
-  list.each do |item|
-    output += item
-  end
-
-  output += "</div>"
+  output += sort(pre_sort) + "</div>"
 
   return output
 end
@@ -93,4 +83,19 @@ end
 # Checks if character is a number
 def number?(char)
   char =~ /[[:digit:]]/
+end
+
+# Sort text
+def sort(text)
+  list = []
+  sorted = ""
+  text.each_line do |line|
+    list.push line
+  end
+  list.sort!
+
+  list.each do |item|
+    sorted += item
+  end
+  return sorted
 end

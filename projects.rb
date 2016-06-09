@@ -10,6 +10,5 @@ def projects
     "<div class='json area'></div></div>" +
     "<script>$('#json-button').click(function(){loadInto('.json', '/json');$('#json-button').hide()});</script>"
 
-
   return page
 end
