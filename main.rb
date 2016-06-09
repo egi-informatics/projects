@@ -16,3 +16,7 @@ end
 get '/projects' do
   projects
 end
+
+get '/json' do
+  json
+end

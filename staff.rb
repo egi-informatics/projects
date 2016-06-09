@@ -5,7 +5,7 @@ def staff
   text = URI.parse(url).read
 
   output =
-    "<button class='copy-button' type='button' data-clipboard-target='#staff-text'>" +
+    "<div><h3 style='display: inline-block;'>Staff Members</h3><button class='copy-button' type='button' data-clipboard-target='#staff-text'>" +
       "<img src='/clippy.svg' width='15'  alt='Copy to Clipboard'/>" +
     "</button>" +
     "<textarea id='staff-text'>"
@@ -18,7 +18,7 @@ def staff
       end
     end
 
-    output += "</textarea>" +
+    output += "</textarea></div>" +
     "<script>auto_grow($('#staff-text').get(0));</script>"
 
   return output
