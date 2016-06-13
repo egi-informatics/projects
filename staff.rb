@@ -1,4 +1,4 @@
-def staff
+def load_staff
   # url = "https://rawgit.com/spencerlarry/2a01b56ffe8121c94179d65a6528a997/raw/91cfa2ae45c8dd52d302f2e09407833cffc3b757/test-for-ruby.html"
   url = "http://egi.utah.edu/about/staff/?mode=quick"
 

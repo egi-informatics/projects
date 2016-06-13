@@ -1,4 +1,4 @@
-def research_portfolio
+def load_rp
   url = 'http://egi.utah.edu/downloads/research_portfolio/EGI_Research_Portfolio.pdf'
 
   io = open(url)
@@ -8,23 +8,21 @@ def research_portfolio
   # Goes through each page of the pdf
   reader.pages.each do |page|
     text = page.text
-    new_line = ''
 
     # Skips pages without I numbers
     next unless text.include? 'I 0'
 
     number = get_num(text)
-    new_line += "<div class='num'>#{number}</div>"
-
     status = get_status(text)
-    new_line += "<div class='status'>#{status}</div>"
 
-    pre_sort += "<li>#{new_line}</li>\n"
+    output += "<tr><td>#{number}</td><td>#{status}</td></tr>" + "\n"
   end
 
-  output += sort(pre_sort) + '</div>'
+  output = sort(output)
+  output = wrap(output, "table")
 
   output
+
 end
 
 # Seaches page for I number

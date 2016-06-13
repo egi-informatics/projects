@@ -1,12 +1,12 @@
 require 'sinatra'
 require 'open-uri'
 require 'pdf-reader'
+require 'json'
 
 require_relative 'functions'
 require_relative 'research_portfolio'
 require_relative 'staff'
 require_relative 'json'
-require_relative 'projects'
 require_relative 'below_map'
 
 get '/' do
@@ -14,21 +14,25 @@ get '/' do
 end
 
 get '/staff' do
-  staff
+  load_staff
 end
 
 get '/projects' do
-  projects
-end
-
-get '/research-portfolio' do
   send_file File.join(settings.public_folder, 'projects.html')
 end
 
+get '/research-portfolio' do
+  load_rp
+end
+
 get '/json' do
-  json
+  load_json
 end
 
 get '/below-map' do
-  below_map
+  load_below
+end
+
+get '/pages' do
+  load_pages
 end

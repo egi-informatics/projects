@@ -1,6 +1,4 @@
-require 'json'
-
-def json
+def load_json
   url = 'http://egi.utah.edu/api/research.json'
   text = URI.parse(url).read
 
@@ -17,8 +15,9 @@ def json
     status = 'Development'  if status.include? 'Dev'
     status = 'Progress'     if status.include? 'Prog'
 
-    output += "<li><div class='num'>#{number}</div><div class='status'>#{status}</div>\n"
+    output += "<tr><td>#{number}</td><td>#{status}</td></tr>" + "\n"
   end
 
-  sort(output)
+  output = sort(output)
+  output = wrap(output, "table")
 end

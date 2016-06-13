@@ -42,20 +42,6 @@ textarea:focus{
   display: inline-block;
 }
 
-.num{
-  width: 85px;
-}
-
-.area{
-  display: inline-block;
-  margin-right: 30px;
-}
-
-.area + .area {
-  border-left: 1px solid lightgray;
-  padding-left: 30px;
-}
-
 nav {
   margin: 20px;
   bottom: 0;
@@ -85,7 +71,21 @@ nav li:first-child .button{
   background-size: contain;
   width: 40px;
   height: 40px;
-  float: right;
+  /*float: right;*/
+}
+
+table{
+  border-collapse: collapse;
+}
+td{
+  border: 1px solid lightgray;
+  padding: 2px 6px;
+  background-color: whitesmoke;
+}
+
+.area{
+  margin: 0 20px;
+  width: 200px;
 }
 
 .copy-button {
@@ -115,5 +115,5 @@ nav li:first-child .button{
 }
 
 .hidden {
-  opacity: 0;
+  display: none;
 }

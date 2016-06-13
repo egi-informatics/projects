@@ -25,3 +25,7 @@ def sort(text)
   end
   sorted
 end
+
+def wrap(text, tag)
+  "<#{tag}>#{text}</#{tag}>"
+end

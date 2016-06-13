@@ -1,14 +1,11 @@
-function loadInto(element, page){
+function loadInto(element, page, loading){
   $.ajax({
     url: page,
-    beforeSend: function(){
-      $('.loading').removeClass('hidden');
-    },
     success: function(data){
       $(element).html(data);
     },
     complete: function(){
-      $('.loading').addClass('hidden');
+      $(loading).addClass('hidden');
     }
   });
 }

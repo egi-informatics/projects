@@ -1,0 +1,22 @@
+<div class='rp area'>
+  <h3>Research Portfolio</h3>
+  <div class="loading" id="rp-loading"></div>
+  <div id='rp-text'></div>
+</div>
+<div class='json area'>
+  <h3>Map JSON Data</h3>
+  <div class="loading" id="json-loading"></div>
+  <div id='json-text'></div>
+</div>
+
+<div class='below area'>
+  <h3>Text Below Map</h3>
+  <div class="loading" id="below-loading"></div>
+  <div id='below-text'></div>
+</div>
+
+<script>
+  loadInto('#rp-text', '/research-portfolio', "#rp-loading");
+  loadInto('#json-text', '/json', "#json-loading");
+  loadInto('#below-text', '/below-map', "#below-loading");
+</script>
