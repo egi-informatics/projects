@@ -1,11 +1,12 @@
-function loadInto(element, page, loading){
+function loadInto(element, page, loading) {
   $.ajax({
     url: page,
-    success: function(data){
+    success: function(data) {
       $(element).html(data);
     },
-    complete: function(){
+    complete: function() {
       $(loading).addClass('hidden');
+      launchCompare();
     }
   });
 }
@@ -15,12 +16,25 @@ function auto_grow(element) {
 }
 
 $(function() {
-  $('#load-staff').click(function(){
+  $('#load-staff').click(function() {
     loadInto('.content', '/staff');
   });
-  $('#load-projects').click(function(){
+  $('#load-projects').click(function() {
     loadInto('.content', '/projects');
   });
 
   new Clipboard('.copy-button');
 });
+
+function launchCompare() {
+  numLeft = $('.loading').not('.hidden').length;
+  console.log("Still Loading: " + numLeft);
+
+  if (numLeft == 0) {
+    compare();
+  }
+}
+
+function compare(){
+
+}
