@@ -8,6 +8,7 @@ require_relative 'research_portfolio'
 require_relative 'staff'
 require_relative 'json'
 require_relative 'below_map'
+require_relative 'pages'
 
 get '/' do
   send_file File.join(settings.public_folder, 'index.html')
