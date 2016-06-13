@@ -88,6 +88,10 @@ td{
   width: 200px;
 }
 
+.below.area{
+  width: initial;
+}
+
 .copy-button {
   display: inline-block;
   padding: 5px 8px;
