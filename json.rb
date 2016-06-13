@@ -1,26 +1,24 @@
 require 'json'
 
 def json
-  url = "http://egi.utah.edu/api/research.json"
+  url = 'http://egi.utah.edu/api/research.json'
   text = URI.parse(url).read
 
   json = JSON.parse(text)
 
-  result = ""
-  pre_sort = ""
+  output = ''
 
-  json.each do |name, project|
-    number = project["id"]
-    if number.include? "Q"
-      next
-    end
-    status = project["status"]
-    if status == "Complete"
-      status = "Completed"
-    end
-    pre_sort += "<li><div class='num'>#{number}</div><div class='status'>#{status}</div>\n"
+  json.each do |_name, project|
+    number = project['id']
+    next if number.include? 'Q'
+    status = project['status']
+
+    status = 'Completed'    if status.include? 'Comp'
+    status = 'Development'  if status.include? 'Dev'
+    status = 'Progress'     if status.include? 'Prog'
+
+    output += "<li><div class='num'>#{number}</div><div class='status'>#{status}</div>\n"
   end
 
-
-  return sort(pre_sort)
+  sort(output)
 end

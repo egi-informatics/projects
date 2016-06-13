@@ -1,6 +1,3 @@
-require_relative 'research_portfolio'
-require_relative 'json'
-
 def projects
   page = load_rp
 

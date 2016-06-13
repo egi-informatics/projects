@@ -10,13 +10,9 @@ h3{
 }
 
 .content {
-  width: calc(100% - 240px - 20px);
-  margin: 20px 20px 50px 240px;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: whitesmoke;
-  border: 1px solid lightgray;
+  margin: 20px;
   display: flex;
+  float: left;
 }
 
 textarea{
@@ -61,11 +57,10 @@ textarea:focus{
 }
 
 nav {
-  display: inline-block;
-  width: 200px;
   margin: 20px;
-  top: 0px;
-  position: fixed;
+  bottom: 0;
+  width: 200px;
+  float: left;
 }
 
 nav li{list-style-type: none;}
@@ -90,8 +85,7 @@ nav li:first-child .button{
   background-size: contain;
   width: 40px;
   height: 40px;
-  right: 0px;
-  position: absolute;
+  float: right;
 }
 
 .copy-button {
