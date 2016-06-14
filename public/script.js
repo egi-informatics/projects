@@ -28,11 +28,13 @@ $(function() {
 
 function launchCompare() {
   numLeft = $('.loading').not('.hidden').length;
-  console.log("Still Loading: " + numLeft);
 
-  if (numLeft == 0) {
-    compare();
+  if (numLeft > 0) {
+    console.log("Still Loading: " + numLeft);
+    return;
   }
+  console.log("Done Loading");
+  compare();
 }
 
 function compare(){

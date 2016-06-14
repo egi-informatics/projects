@@ -18,7 +18,12 @@ def load_pages
 
     text.each_line do |line|
       next unless line.include? "</h1>"
+
       status = line[/(?<=float: right;\">).+(?=<\/span>)/]
+      status = "Development" if status.include? "Dev"
+      status = "Completed" if status.include? "Comp"
+      status = "Progress" if status.include? "Prog"
+
       output += "<tr><td>#{number}</td><td>#{status}</td></tr>" + "\n"
       break
     end
