@@ -35,8 +35,6 @@ def get_num(text)
     array.each do |word|
       next unless word.include? 'I0'
       remove_letters(word)
-
-      word += '  ' if word.length == 6
       return word
     end
   end
